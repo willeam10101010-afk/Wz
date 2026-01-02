@@ -1,0 +1,25 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Otomatis setiap hari pukul 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Update file
+      run: |
+        echo "Auto update at $(date)" >> auto_update.txt
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add auto_update.txt
+        git commit -m "Automated commit on $(date)" || echo "No changes to commit"
+        git push
