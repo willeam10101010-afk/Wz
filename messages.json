@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "incoming": "Hi",
+      "reply": "Hello! How can I help you?"
+    },
+    {
+      "incoming": "What's your name?",
+      "reply": "I'm a WhatsApp Auto Reply bot."
+    },
+    {
+      "incoming": "Bye",
+      "reply": "Goodbye! Have a great day!"
+    }
+  ]
+}
