@@ -20,7 +20,7 @@ def load_existing_data():
 def save_data(message):
     """Menyimpan pesan baru ke XLSX."""
     if not os.path.exists(XLSX_FILE):
-        wb = openpyxl.WorkBook()
+        wb = openpyxl.Workbook()
         sheet = wb.active
         sheet['A1'] = 'Message'
     else:
